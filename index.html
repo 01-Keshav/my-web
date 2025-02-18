@@ -1,10 +1,126 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffeef8 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .flower {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            animation: spin 20s linear infinite;
+        }
+
+        /* Create multiple flowers */
+        .flower:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .flower:nth-child(2) { top: 20%; right: 20%; animation-delay: -2s; }
+        .flower:nth-child(3) { bottom: 15%; left: 15%; animation-delay: -4s; }
+        .flower:nth-child(4) { bottom: 25%; right: 10%; animation-delay: -6s; }
+
+        /* Flower petals */
+        .flower::before {
+            content: '🌸';
+            font-size: 2rem;
+            position: absolute;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+
+        .heart {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin: 1rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 25px;
+            border-radius: 15px 15px 0 0;
+            background-color: #ff69b4;
+        }
+
+        .heart::before {
+            left: 15px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-    <h1> I am Keshav Srivastava </h1>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    
+    <div class="container">
+        <h1>Dear Aksa</h1>
+        <div class="message">
+            <p>True friendship is one of life's greatest gifts, and I'm so grateful to have you as my friend. Your kindness, support, and the joy you bring to my life mean the world to me.</p>
+            <div class="heart"></div>
+            <p>Thank you for being such an amazing friend and making every moment we spend together special.</p>
+            <div class="heart"></div>
+            <p>You're not just a friend, you're family. ✨</p>
+        </div>
+    </div>
 </body>
 </html>
